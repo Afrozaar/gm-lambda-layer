@@ -1,28 +1,15 @@
 #!/bin/bash
 
-GM_VERSION=1.3.31
+GM_VERSION=1.3.36
 LAYER_NAME='graphicsmagick'
 
 REGIONS='
-ap-northeast-1
-ap-northeast-2
-ap-south-1
-ap-southeast-1
-ap-southeast-2
-ca-central-1
-eu-north-1
-eu-central-1
 eu-west-1
-eu-west-2
-eu-west-3
-sa-east-1
-us-east-1
-us-east-2
-us-west-1
-us-west-2
 '
 
-PROFILE='dev'
+region=eu-west-1
+
+PROFILE='tfg'
 
 for region in $REGIONS; do
   aws lambda add-layer-version-permission --region $region --layer-name $LAYER_NAME \
